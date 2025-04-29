@@ -1,0 +1,60 @@
+﻿@page
+@model RentFlow.Pages.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Property</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Property.Id" />
+            <div class="form-group">
+                <label asp-for="Property.Address" class="control-label"></label>
+                <input asp-for="Property.Address" class="form-control" />
+                <span asp-validation-for="Property.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Property.City" class="control-label"></label>
+                <input asp-for="Property.City" class="form-control" />
+                <span asp-validation-for="Property.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Property.State" class="control-label"></label>
+                <input asp-for="Property.State" class="form-control" />
+                <span asp-validation-for="Property.State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Property.Zip" class="control-label"></label>
+                <input asp-for="Property.Zip" class="form-control" />
+                <span asp-validation-for="Property.Zip" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Property.MonthlyRent" class="control-label"></label>
+                <input asp-for="Property.MonthlyRent" class="form-control" />
+                <span asp-validation-for="Property.MonthlyRent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Property.Notes" class="control-label"></label>
+                <input asp-for="Property.Notes" class="form-control" />
+                <span asp-validation-for="Property.Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
